@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>click to buy</title>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="cart.css" type="text/css" rel="stylesheet">
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<script>
+			function add() {
+			var a = $("#cart").val();
+			a++;
+			if (a => 1) {
+				$("#plus").removeAttr("disabled");
+			}
+			$("#cart").val(a);
+			};
+			
+			function subst() {
+			var b = $("#cart").val();
+			if (b.length > 0 && b >= 1) {
+				b--;
+				$("#cart").val(b);
+			}
+			else {
+				$("#subs").attr("disabled", "disabled");
+			}
+			};
+			
+		</script>
+			
+		<div class="row">
+			<h3>Cart system using JQUERY </h3>
+		<input type="button" value="-" id="subst" class="btn" onclick="subst()" />
+		<input type="text" value="1" id="cart" />
+		<input type="button" value="+" id="plus" onclick="add()" class="btn" />
+		</div>
+	
+	</body>	
+	</html>

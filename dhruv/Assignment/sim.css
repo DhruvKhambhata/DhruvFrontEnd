@@ -1,0 +1,39 @@
+.head{
+ font-style:italic;
+ font-variant:inherit;
+ text-align:center;
+ font-size:600%;
+ color:white;
+ height:auto;
+ width:100%;
+ background-color:blue;
+ float:left;
+ 
+}
+
+.side1{
+	font-family:arial;
+	line-height:150%;
+	font-size:150%;
+	color:white;
+	height:500px;
+	width:20%;
+	background-color:green;
+	float:left;
+}
+.p{
+	font-family:arial;
+	width:80%;
+	float:left;
+	height:500px;
+}
+
+.footer{
+	text-align:center;
+	height:50px;
+	width:25%;
+	color:white;
+	background-color:black;
+	float:left;
+	
+}

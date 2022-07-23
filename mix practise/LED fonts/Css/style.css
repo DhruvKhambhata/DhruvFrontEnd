@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: #2C2C2EFF;
+}
+.bodyContainer{
+    margin-top: 20%;
+    display: block;
+    color:#fff;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.button{
+    border-radius: 20px;
+    padding:5px 30px;
+}
+
+
+#marqueeText{
+    font-size:200px;
+    overflow: hidden;
+    text-align: center;
+    margin:0;
+}
+
+
+
+.colorpicker{
+    border:none;
+    background-color: #2C2C2EFF;
+    height: 50px;
+    
+}
+
+@media screen {
+    body{
+        position: relative;
+
+    }
+    .textoutput{
+        
+        height: fit-content;
+    }
+    
+}

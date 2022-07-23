@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Grid Box</title>
+  </head>
+  <body>
+    <div class="Wrapper">
+      <div class="Container">
+        <div class="Header">CSS3 3D Gradient & Shadow Box</div>
+        <div class="Section">
+          just a simple example of a 3D gradient box with eliptical shadow using
+          only CSS3 gradient and box shadow effects.
+        </div>
+        <div class="Footer">
+          ispired by @<a href="">Malarkey</a> & @<a href="">Sturobson</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    .Wrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 25vh auto;
+      width: 500px;
+      height: 250px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: linear-gradient(
+        to right,
+        #d7dbdd,
+        #e5e7e9,
+        #f2f3f4,
+        #f2f3f4,
+        #e5e7e9,
+        #d7dbdd
+      );
+      border-radius: 12px;
+      box-shadow: 0 12px 8px -4px #616a6b;
+    }
+    .Container {
+      
+      width: 95%;
+      height: fit-content;
+    }
+    .Header {
+      
+      font-size: 2em;
+      font-weight: 600;
+      width: 100%;
+      margin: 15px 0px;
+    }
+    .Section {
+      
+      font-size: 1.25em;
+      font-weight: 500;
+      color: #909497;
+      margin: 15px 0px;
+    }
+    .Footer {
+      
+      font-size: 1em;
+      margin: 15px 0px;
+      color: #909497;
+    }
+    .Footer a {
+      color: #3498db;
+    }
+  </style>
+</html>

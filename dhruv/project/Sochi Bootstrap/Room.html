@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Room Grid- Sochi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+  <link rel="icon" href="https://bslthemes.site/sochi/wp-content/uploads/2021/02/cropped-logo-black-2x-32x32.png" sizes="32x32">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+	<!--------------------------reveal-------------------->
+	<script src="js/reveal.js"></script>
+	<script src="js/cart.js"></script>
+	
+	
+	
+</head>
+<body>
+		<!----pre loader -->
+	<div id="mdb-preloader">
+	</div>
+	<script>
+		$(window).on('load', function() {
+		$('#mdb-preloader').delay(1000).fadeOut(200);	
+	});
+	 
+	</script>
+
+
+
+
+	<!--Main Navigation-->
+
+	
+		<!--Navbar-->
+			<nav class=" col-md-12 navbar navbar-expand-lg rm-navbar">
+
+				<div class="container-fluid col-md-12">
+
+						<!-- Navbar brand -->
+						<a class="navbar-brand" href="#"><img src="imgs/logo-black-2x.png"  alt="logo"class="nav_logo"/></a>
+
+						<!-- Collapse button -->
+							<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#basicExampleNav"
+							  aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+							  <span class="text-dark "><i style="font-size:24px" class="fa">&#xf0c9;</i></span>
+							</button>
+
+						<!-- Collapsible content -->
+						<div class="collapse navbar-collapse font-weight-bold  rounded" id="basicExampleNav">
+
+						  <!-- Links -->
+							  <ul class="navbar-nav mr-auto">
+								<li class="nav-item active">
+								  <a class="nav-link text-dark" href="index.html">Home
+									<span class="sr-only">(current)</span>
+								  </a>
+								</li>
+								<li class="nav-item ">
+								  <a class="nav-link text-dark" href="about.html">About us</a>
+								</li>
+								
+
+								<!-- Dropdown -->
+								<li class="nav-item dropdown">
+								  <a class="nav-link dropdown-toggle blog c-1" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Rooms</a>
+								  <div class="dropdown-menu dropdown-primary bg-white" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item  blog-1" href="Rooms.html">Rooms Grid </a>
+									<a class="dropdown-item" href="#">Rooms List</a>
+									<a class="dropdown-item" href="#">Rooms Singles</a>
+								  </div>
+								</li>
+								
+								<li class="nav-item ">
+								  <a class="nav-link text-dark" href="#">Gallery</a>
+								</li>
+								
+								<li class="nav-item dropdown">
+								  <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Blog</a>
+								  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="blog.html">Blog Grid </a>
+									<a class="dropdown-item" href="#">Blog single</a>
+									<a class="dropdown-item" href="#">Error Page</a>
+								  </div>
+								</li>
+								
+								<li class="nav-item ">
+								  <a class="nav-link text-dark" href="contact-us.html">Contact Us</a>
+								</li>
+								
+								<li class="nav-item dropdown c c-1">
+								  <a class="nav-link dropdown-toggle c-1" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Shop</a>
+								  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="#">Products </a>
+									<a class="dropdown-item" href="#">Product single</a>
+									
+								  </div>
+								</li>
+							  </ul>
+						  <!-- Links -->
+							<div class="cart-btn">
+								<div class="cart-icon zoom-cursor c cart c-1"> 	
+									<i class="fa fa-cart-plus" style="font-size:24px"></i>
+									<a class="cart-contents">
+										<span class="cart-count"></span>
+									</a>
+								</div>
+								
+							</div>
+							
+							<a href="#" class="btn button-ext vibrate-2">
+							<i class="fa fa-bookmark-o"></i>
+							Reservation</a>
+				  
+						</div>
+						
+						
+				
+
+				</div>
+
+			</nav>
+			<section>
+			<div class="container rm-date-cont ">
+				<div class="row">
+					<div class="col-md-2  rm-box-1 borderone">
+						
+										
+						<a href="#" data-toggle="tooltip" data-placement="bottom" title="checkin_date"><input type="date" value="arrival time" required></a>
+						
+						
+					</div>
+					<div class="col-md-2 rm-boxone bordertwo">
+						
+						<a href="#" data-toggle="tooltip" data-placement="bottom" title="checkout_date"><input type="date" value="arrival time" required></a>
+						
+					</div>
+					
+					<div class="col-md-2 rm-box-2 borderone">
+						<div class="row rm-ad-cont">
+								<span class="rm-ext">Adult:</span>
+							<div class="row">
+							
+								<input type="button" value="-" id="subst" class="btn rm-subst"  onclick="subst()">
+								<input type="text" value="1" id="cart" class="rm-cart" />
+								<input type="button" value="+"  id="plus" class="btn rm-plus"  onclick="add()">
+							
+							</div>
+						</div>
+						
+						
+						
+					</div>
+					<div class="col-md-2 rm-box-2 bordertwo">
+						<div class="row rm-ad-cont">
+								<span class="rm-ext">Child:</span>
+							<div class="row">
+								
+								<input type="submit" value="-" id="substchild" class="btn rm-subst"  onclick="substchild()">
+								<input type="text" value="0" id="cartchild" class="rm-cart" />
+								<input type="submit" value="+"  id="pluschild" class="btn rm-plus"  onclick="addchild()">
+								
+							</div>
+						</div>
+						
+						
+					</div>
+					
+					<div class="col-md-3 rm-btn_box-1 ">
+						
+						<a href="#" class="rm-button-ext-1 ">
+							
+							Check Availability</a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="rm-b">
+				
+			</div>
+			</section>
+			<section>
+			<div class="container">
+				
+				<span class="scroll">scroll down <i class="fa fa-hand-o-right"></i></span>
+					
+						
+				
+				<span class="rm-title-2 reveal">Rooms / Suits.</span>
+				<div class="rm-grid-2 c d-flex">
+					<div class="row ">
+					
+						<div class="col-md-4 rm-ig1 rounded reveal">
+						
+							<div class="col-md-12 rm-img_sec">
+							<img src="imgs/image_room_07-900x601.jpg" class=" img-fluid"/>
+							</div>
+							
+							<div class="rm-cont">
+								Standart Room<br>$100.0 <span class="rm-unit">night</span>
+							</div>
+							
+							<div class="rm-bottom_cont">
+								<div class="rm-bottom_icon">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> 
+									<span class="rm-bottom_info">HA NOI</span>
+									<br>
+									<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+									<span class="rm-bottom_info"> 47 sq.ft</span>
+									
+									<span class="rm-bad_info"><i class="fa fa-bed" aria-hidden="true"></i> 2 Bedrooms</span>
+								</div>
+							</div>
+							
+						</div>
+						
+						
+					
+						<div class="col-md-4 rm-ig1 rounded reveal ">
+							<div class="col-md-12 rm-img_sec">
+							<img src="imgs/image_room_01-900x557.jpg" class="w-100"/>
+							</div>
+							<div class="rm-itemRoom">
+								<span class="badge badge-pill">Popular</span>
+							</div>
+							<div class="rm-cont">
+								Comfort Room<br>$75.0 <span class="unit">night</span>
+							</div>
+							<div class="rm-bottom_cont">
+								<div class="rm-bottom_icon">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> 
+									<span class="rm-bottom_info">HA NOI</span>
+									<br>
+									
+									<span class="rm-bottom_info"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 54 sq.ft</span>
+									
+									<span class="rm-bad_info"><i class="fa fa-bed" aria-hidden="true"></i> 1 Bedrooms</span>
+								</div>
+							</div>
+							
+						</div>
+						<div class="col-md-4 rm-ig1 rounded reveal">
+							<div class="col-md-12 rm-img_sec">
+							<img src="imgs/image_room_02-900x596.jpg"/>
+							</div>
+							<div class="rm-itemRoom">
+								<span class="badge badge-pill">Popular</span>
+							</div>
+							<div class="rm-cont">
+								Luxe Room<br>$50.0 <span class="unit">night</span>
+							</div>
+							<div class="rm-bottom_cont">
+								<div class="rm-bottom_icon">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> 
+									<span class="rm-bottom_info">HA NOI</span>
+									<br>
+									<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+									<span class="rm-bottom_info"> 37 sq.ft</span>
+									
+									<span class="rm-bad_info"><i class="fa fa-bed" aria-hidden="true"></i> 1 Bedrooms</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 rm-ig1 rounded reveal">
+							<div class="col-md-12 rm-img_sec">
+							<img src="imgs/image_room_03-900x600.jpg"/>
+							</div>
+							<div class="rm-itemRoom">
+								<span class="badge badge-pill">Popular</span>
+							</div>
+							<div class="rm-cont">
+								Grand Delux Room<br>$175.0 <span class="unit">night</span>
+							</div>
+							<div class="rm-bottom_cont">
+								<div class="rm-bottom_icon">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> 
+									<span class="rm-bottom_info">HA NOI</span>
+									<br>
+									<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+									<span class="rm-bottom_info"> 100 sq.ft</span>
+									
+									<span class="rm-bad_info"><i class="fa fa-bed" aria-hidden="true"></i> 2 Bedrooms</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 rm-ig1 rounded reveal">
+							<div class="col-md-12 rm-img_sec">
+							<img src="imgs/image_room_04.jpg"/>
+							</div>
+							<div class="rm-itemRoom">
+								<span class="badge badge-pill">Popular</span>
+							</div>
+							<div class="rm-cont">
+								Modern Room<br>$99.0 <span class="unit">night</span>
+							</div>
+							<div class="rm-bottom_cont">
+								<div class="rm-bottom_icon">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> 
+									<span class="rm-bottom_info">HA NOI</span>
+									<br>
+									<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+									<span class="rm-bottom_info"> 50 sq.ft</span>
+									
+									<span class="rm-bad_info"><i class="fa fa-bed" aria-hidden="true"></i> 6 Bedrooms</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 rm-ig1 rounded reveal">
+							<div class="col-md-12 rm-img_sec">
+							<img src="imgs/image_room_05-900x579.jpg"/>
+							</div>
+							<div class="rm-itemRoom">
+								<span class="badge badge-pill">Popular</span>
+							</div>
+							<div class="rm-cont">
+								Apartments<br>$100.0 <span class="unit">night</span>
+							</div>
+							<div class="rm-bottom_cont">
+								<div class="rm-bottom_icon">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> 
+									<span class="rm-bottom_info">HA NOI</span>
+									<br>
+									<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+									<span class="rm-bottom_info"> 47 sq.ft</span>
+									
+									<span class="rm-bad_info"><i class="fa fa-bed" aria-hidden="true"></i> 2 Bedrooms</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+			
+			<footer>
+	
+				<div class="container-fluid">
+					<div class="footer-nav1">
+						<ul class="nav float-left">
+							<li class="nav-item">
+								<a href="#" class="nav-link  disabled ">© 2022. All rights reserved.</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ex">Terms and Conditions</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ex">Privacy Policy</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ex">Made By Dhruv</a>
+							</li>
+							
+						</ul>
+						
+						<ul class="nav float-right">
+							<li class="nav-item">
+								<a href="#" class="nav-link icons"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link icons"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link icons"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			
+		</footer>
+			</body>
+			</html>
+			

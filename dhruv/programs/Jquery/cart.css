@@ -1,0 +1,42 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+div {
+	margin:0 auto;
+	
+	height:80px;
+	width:100%;
+	justify-content:center;
+	align-items:center;
+	
+}
+
+input{
+	
+	
+}
+
+.btn{
+	background-color:#2596be;
+	padding:20px 15px;
+	border:none;
+	border-radius:10px;
+	color:white;
+}
+
+
+#cart{
+	border-radius:10px;
+	padding:5px 10px;
+	text-align:center;
+	font-size:25px;
+	width:20%;
+}
+
+h3{
+	margin:10px 60px;
+}
+

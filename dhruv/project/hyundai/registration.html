@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reg Page/Hyundai Motors</title>
+	<link rel="icon" href="http://www.hyundai.com/etc/designs/hyundai/in/en/favicon.ico">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+	<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/reg.js"></script>
+  
+</head>
+<body>
+	
+	<div id="preloader">
+
+	</div>
+		<script>
+			var loader= document.getElementById("preloader")
+			
+			window.addEventListener("load", function(){
+					loader.style.display="none";
+		 })
+		</script>
+
+	<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-3 logo">
+						<a href="index.html"><img src="https://www.hyundai.com/etc/designs/hyundai/ww/en/images/common/logo.png"/></a>
+					</div>
+
+					<div class="col-6 topnav">
+						<ul>
+							<li><a href="fac.html">Find a Car</a></li>
+							<li><a href="#IONIQ">Buy a Car</a></li>
+							<li><a href="#Lifestyle">Connect to Service</a></li>
+							<li><a href="#Vehicles">Hyundai Story</a></li>
+							<li><a href="#Company">Click To Buy</a></li>
+						</ul>
+					</div>
+					<div class="col-3 iconnav">
+						<ul>
+							<li><a href="login_page.html" ><img src="	https://www.hyundai.com/content/dam/hyundai/in/en/images/common/ico-user-20-x-20@1x.png" class="icons"/></a></li>
+							<li><a href="#IONIQ" ><img src="https://www.hyundai.com/content/dam/hyundai/in/en/images/common/ico_find_a_dealer_20x20.png" class="icons"/></a></li>
+							<li><a href="#search"><img src="	https://www.hyundai.com/etc/designs/hyundai/in/en/images/common/ico-social-20-x-20.png" class="icons"/></a></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+	</header>
+	<section>
+		<div class="row">
+				<div class="col-12 logcontainer">
+						<div class="col-3 logextra">
+							
+						</div>
+						<div class="col-6 loginfo">
+							<form name="myForm" onsubmit = "return reg_form(this)" method="post" action=""	>
+								
+								<div class="form-group">
+									<label>Registred Email Address<span class="require">*</span></label>	
+									<input type="email" class="col-12" id="email" placeholder="please enter email address"><br>
+									<div id="msg1"></div>
+								</div>
+								<div class="form-group">
+									<label>password<span class="require">*</span></label>	
+									<input type="password" class="col-12" id="pass" placeholder="please enter password"><br>
+									<div id="msg2"></div>
+								</div>
+								<div class="formcont">
+									Forgot email address?
+									<span class="f2">Forgot password?</span>
+									<br>
+									
+								</div>
+								<div class="form-group d-flex">
+									<input type="checkbox" id="chk">
+										<label class="tm_block">By clicking Login, I have read and agree to the
+										<strong>
+											<a href="" class="termsconditn">
+												<u>Terms of Use and Privacy Policy</u>
+											</a>
+										</strong> available on the Site and authorize Hyundai &amp; its representatives to Call / SMS / Email me.  </label>
+								</div>
+									<div id="msg3"></div>
+									<input type="submit"  value="Login" name="Submit" class="col-10 submit-btn" />
+							
+								
+							</form>
+								<div class="col-3 logextra ">
+
+								</div>
+							
+				</div>
+		</div>
+</section>	
+<section>
+	<div class=" col-12 logregister">
+		please click here here to &nbsp; <a href="login_page.html"><u>Login with mobile no</u></a>
+	</div>
+</section>
+<section class="extrasec">
+
+</section>
+<footer>
+	<div class="row footerarea">
+		<span class="col-2 flogo">
+			<a href="#logo">
+				<img src="	https://www.hyundai.com/content/dam/hyundai/in/en/images/common/footer_logo_pc.png" />
+			</a>
+		</span>
+		<div class="col-10 footerMenu">
+			<div class="navbartwo">
+				<b><a href="#">World wide |</a>
+					<a href="#">Contact Us |</a>
+					<a href="#">Legal disclaimer |</a>
+					<a href="#">Sitemap |</a>
+					<a href="#">Hyundai Suppliar </a></b>
+			</div>
+			<p class="copyright"> Copyright 2021 Hyundai Motor India. All Rights Reserved.</p>
+			<br>
+        <p class="myname">Made with	<span style='font-size:30px;'>&#128522;</span> <br><sub>.Dhruv</sub></p>
+		</div>
+		
+	</div>
+</footer>
+</body>
+</html>
