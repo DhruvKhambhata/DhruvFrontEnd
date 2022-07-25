@@ -13,7 +13,7 @@ function Product_list() {
   
     function viewProducts()
     {
-      fetch(`https://fakestoreapi.com/products`)
+      fetch(`https://websiteecom-355b6-default-rtdb.firebaseio.com/products.json`)
       .then((resp)=>resp.json())
       .then((data)=>SetallProduct(data));
     }
@@ -23,13 +23,13 @@ function Product_list() {
             <>
             {
                 Object.keys(allProduct).map((item)=>{
-                const {title,price,image}=allProduct[item]; 
+                const {title,file,main_price,disc_price,size,category,stock,desc}=allProduct[item]; 
                  return(
                     
                     <div className="col-lg-4 col-md-6 col-sm-6">
                       <div className="product__item">
                         <div className="product__item__pic set-bg">
-                          <img src={image} height="100%" width="100%"/>
+                          <img src={file} height="100%" width="100%"/>
                           <ul className="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                             <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a>
@@ -47,7 +47,7 @@ function Product_list() {
                             <i className="fa fa-star-o" />
                             <i className="fa fa-star-o" />
                           </div>
-                          <h5>RS.{price}</h5>
+                          <h5>RS.{main_price}</h5>
                           <div className="product__color__select">
                             <label htmlFor="pc-4">
                               <input type="radio" id="pc-4" />
