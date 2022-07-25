@@ -9,6 +9,8 @@ function Cart() {
     viewProducts()
   },[]);
 
+  
+
   async function viewProducts()
   {
     const res = await axios.get(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Cart.json`);
@@ -19,31 +21,36 @@ function Cart() {
     
   }
 
-  async function handelDelete(prod_id) {
+  async function handelDelete(user_id) {
     let ans = swal({
       title: "Are you sure?",
-      text: "",
+      text: "Once deleted, you will not be able to recover this user detail!",
       icon: "warning",
-      buttons:true,
+      buttons: true,
       dangerMode: true,
     })
     .then((willDelete) => {
       if (willDelete) {
-        axios.delete(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Cart/${prod_id}.json`);
+        axios.delete(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Register/${user_id}.json`);
         
-        swal("your product removed from cart", {
+        swal("Poof! Your user detail has been deleted!", {
         icon: "success",
           
         });
         
+        
       } else {
-        swal("Your Product is safe!");
+        swal("Your user detail is safe!");
         
       }
       
     });
-    
+  }
+
+    function CartUpdate(){
+      viewProducts()
     }
+
   
         return(
 
@@ -92,10 +99,10 @@ function Cart() {
                 </td>
                 <td className="cart__price">{main_price}</td>
                 <td >
-                  <button className="cart__close btn" onClick={handelDelete}>
-                    <div >
+                  <button className="cart__close btn" onClick={()=>handelDelete(item)}>
+                    
                     <i className="fa fa-close" />
-                    </div>
+                    
                   </button>
                   </td>
               </tr>
@@ -131,7 +138,7 @@ function Cart() {
         <div className="cart__total">
           <h6>Cart total</h6>
           <ul>
-            <li>Subtotal <span>$ 169.50</span></li>
+            <li>Subtotal <span></span></li>
             <li>Total <span>$ 169.50</span></li>
           </ul>
           <a href="#" className="primary-btn">Proceed to checkout</a>

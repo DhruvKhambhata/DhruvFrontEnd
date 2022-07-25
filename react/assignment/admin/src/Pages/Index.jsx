@@ -80,7 +80,11 @@ function Index() {
         }
         else
         {
-          alert("somthing went wrong ")
+          swal({
+            title: data.error.message,
+            text: data.error.message,
+            icon: "error",
+          });
         }
       });
   }
