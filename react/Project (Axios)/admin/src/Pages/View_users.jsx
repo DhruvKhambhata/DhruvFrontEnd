@@ -6,7 +6,8 @@ function View_users() {
   const [allUsers,setAllUsers]=useState([]);
 
   useEffect(()=>{
-    ViewUsers()
+    ViewUsers();
+    
   },[]);
 
   async function  ViewUsers()
@@ -129,7 +130,7 @@ function View_users() {
                           <td>{email}</td>
                           <td className="center"><button onClick={()=>handelstatus(item)} className="btn btn-primary">{status}</button></td>
                           <td className="center"><button onClick={()=>handelDelete(item)} className="btn btn-danger">Delete</button></td>
-                          <td className="center"><button onClick={()=>Navigate(`/View_users/${item}`)} className="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button></td>
+                          <td className="center"><button onClick={()=>Navigate(`/View_users/${item}`)} className="btn btn-primary">Edit</button></td>
                          
                         </tr>
                       )

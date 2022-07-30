@@ -2,24 +2,28 @@ import React,{useState,useEffect} from 'react'
 import { useNavigate} from 'react-router-dom'
 import swal from 'sweetalert';
 import axios from 'axios';
+
 function View_contact() {
 
   const [allContact,setAllContact]=useState([]);
-
+  
   useEffect(()=>{
-    Viewcontact();
+    Viewcontact()
+    
   },[]);
 
- 
-  async function Viewcontact()
-  {
-    const res = await axios.get(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Contact.json`);
-    if (res.data) {
-      setAllContact(res.data);
-      Viewcontact();
-    }
-    
+  async function Viewcontact() {
+    const res = await axios.get(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Contact.json`)
+   if(res.data){
+    setAllContact(res.data);
+   }
+  else{
+    alert("error")
   }
+
+   
+  }
+ 
 
   const Navigate=useNavigate();
 
@@ -78,24 +82,25 @@ function View_contact() {
                     </tr>
                   </thead>
                   <tbody>
-                   {
+                  {
                      Object.keys(allContact).map((item,index)=>{
-                      const {email,message,name}=allContact[item];  
+                      const {name,email,message,}=allContact[item];  
                       return(
                         <tr key={index} className="odd gradeX">
                           <td>{index+1}</td>
-                          <td>{email}</td>
-                          <td>{message}</td>
                           <td>{name}</td>
+                          <td>{message}</td>
+                          <td>{email}</td>
+                          
                           <td className="center"><button onClick={()=>handelDelete(item)} className="btn btn-danger">Delete</button></td>
                           <td className="center"><button onClick={()=>Navigate(`/view_contact/${item}`)} className="btn btn-primary">Edit</button></td>
+                         
                         </tr>
                       )
+
                      })
-                   } 
+                    }
                     
-                    
-          
                   </tbody>
                 </table>
               </div>

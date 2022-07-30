@@ -1,17 +1,26 @@
 import React,{useState,useEffect} from 'react'
 import { useParams , useNavigate, Link } from 'react-router-dom'
-
+import axios from 'axios';
 
 function Product_Details() {
   const { id } = useParams()
   const [singledata,setSingleData]=useState({});
   const [formvalue,setFormvalue]=useState({});
   
+ 
+
   useEffect(()=>{
-      fetch(`https://websiteecom-355b6-default-rtdb.firebaseio.com/products/${id}.json`)
-      .then((resp)=>resp.json())
-      .then((data)=>setSingleData(data));
-  },[]); 
+    Viewproduct();
+  },[]);
+
+  async function Viewproduct()
+  {
+    const res = await axios.get(`https://websiteecom-355b6-default-rtdb.firebaseio.com/products/${id}.json`);
+    if (res.data) {
+      setSingleData(res.data);
+    }
+    
+  }
  
 function changehandel(e)
 {
@@ -21,24 +30,22 @@ function changehandel(e)
 }
 
 
+//https://websiteecom-355b6-default-rtdb.firebaseio.com/Cart.json
 
-function submithandel(e)
-{
-    e.preventDefault();
-    fetch('https://websiteecom-355b6-default-rtdb.firebaseio.com/Cart.json', {
-    method: 'POST',
-    body: JSON.stringify(singledata),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if(data)
-      {
-        console.log('product added to cart')
-      }
-    });
+
+const submitHandel = async (e) => {
+  e.preventDefault();
+  const res=await axios.post(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Cart.json`,formvalue);
+  if(res.data)
+  {
+      //alert(res.data.msg);
+      swal({
+          title: "Success",
+          text: "done",
+          icon: "success",
+          button: "Ok!",
+        }); 
+  }
 }
   return (
 <div>
@@ -136,7 +143,7 @@ function submithandel(e)
                     <input type="text" defaultValue={1} />
                   </div>
                 </div>
-                <a href="#" className="primary-btn btn" onClick={submithandel}  >add to cart</a>
+                <a href="#" className="primary-btn btn" onClick={submitHandel}  >add to cart</a>
                 
               </div>
               <div className="product__details__btns__option">

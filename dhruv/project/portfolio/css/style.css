@@ -29,13 +29,22 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: crimson;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: crimson;
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: #f1f1f1;
+    background: crimson;
+  }
+  
+  ::selection {
+    color: #f1f1f1;
+    background: crimson;
+  }
 
 /* all similar content styling codes */
 
@@ -48,6 +57,16 @@ section {
     padding: 0 80px;
     margin: auto;
 }
+
+#mdb-preloader{
+    background:hsl(0, 0%, 100%) url(https://i.pinimg.com/originals/b1/4c/a3/b14ca3ac3be660af02b717d8c1a35c6e.gif) no-repeat center center;
+    background-size:30%;
+    height:100vh;
+    width:100%;
+    position: fixed;
+    z-index:99999;
+    overflow: hidden;
+  }
 
 .about,
 .services,
@@ -170,12 +189,16 @@ section .title::after {
     display: none;
 }
 
+
+
 .scroll-up-btn {
     position: fixed;
+    
     height: 45px;
     width: 42px;
     background: crimson;
     right: 30px;
+    margin-bottom:80px;
     bottom: 10px;
     text-align: center;
     line-height: 45px;
@@ -205,7 +228,7 @@ section .title::after {
 
 .home {
     display: flex;
-    background: url("images/banner1.jpg") no-repeat center;
+    background: url("../images/banner1.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -679,6 +702,9 @@ footer span a:hover {
 }
 
 
+   
+
+
 /* responsive media query start */
 
 @media (max-width: 1104px) {
@@ -800,7 +826,7 @@ footer span a:hover {
     }
     .scroll-up-btn {
         right: 15px;
-        bottom: 15px;
+        bottom: 20%;
         height: 38px;
         width: 35px;
         font-size: 23px;

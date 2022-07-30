@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 
 function Add_Product() {
   const [formvalue,setFormvalue]=useState({
@@ -12,6 +13,8 @@ function Add_Product() {
     "file":""
   })
 
+ 
+
   function changehandel(e)
   {
       const {name,value}=e.target;
@@ -19,25 +22,33 @@ function Add_Product() {
       console.log(formvalue);
   }
 
-  function submithandel(e)
-  {
-      e.preventDefault();
-      fetch('https://websiteecom-355b6-default-rtdb.firebaseio.com/products.json', {
-      method: 'POST',
-      body: JSON.stringify(formvalue),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if(data)
-        {
-          setFormvalue({title:"",main_price:"",disc_price:"",category:"",stock:"",size:"",desc:"",file:""});
-        }
+  const submitHandel = async (e) => {
+    e.preventDefault();
+    const res=await axios.post(`https://websiteecom-355b6-default-rtdb.firebaseio.com/products.json`,formvalue);
+    if(res.data)
+    {
+        //alert(res.data.msg);
+        swal({
+            title: "Success",
+            text: data.message,
+            icon: "success",
+            button: "Ok!",
+          });
+        setFormvalue({...formvalue,title:"",main_price:"",disc_price:"",category:"",stock:"",size:"",desc:"",file:""})
+        
+        
+    }
+    else
+    {
+      swal({
+        title: "error",
+        text: data.error.message,
+        icon: "error",
+        button: "Ok!",
       });
-  }
-
+      setFormvalue({...formvalue,title:"",main_price:"",disc_price:"",category:"",stock:"",size:"",desc:"",file:""})
+    }
+}
   return (
    <div>
   <div className="content-wrapper">
@@ -137,7 +148,7 @@ function Add_Product() {
               </div>
 
               <div className="form-group">
-                <button className='btn btn-primary btn-lg' onClick={submithandel}>Submit</button>
+                <button className='btn btn-primary btn-lg' onClick={submitHandel}>Submit</button>
               </div>
             </div>
           </div>

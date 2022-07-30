@@ -1,36 +1,48 @@
 import React,{useState} from 'react'
-
+import axios from 'axios';
+import swal from 'sweetalert';
 
 function Contact() {
-  const [formvalue,setFormvalue] = useState({
-    "name":"",
-    "email":"",
-    "message":""
-  })
+  const [formvalue,setFormvalue]=useState({
+  "name":"",
+  "email":"",
+  "message":""})
+
+  
   
     function changehandel(e){
       const {name,value}=e.target;
       setFormvalue({...formvalue,[name]:value})
-  
+      console.log(formvalue);
     }
   
-    function submithandel(e){
+    const submitHandel = async (e) => {
       e.preventDefault();
-      fetch('https://websiteecom-355b6-default-rtdb.firebaseio.com/Contact.json', {
-    method: 'POST',
-    body: JSON.stringify(formvalue),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if(data)
+      const res=await axios.post(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Contact.json`,formvalue);
+      if(res.data)
       {
-        setFormvalue({name:"",email:"",message:""});
+          
+          swal({
+              title: "Success",
+              text: "done",
+              icon: "success",
+              button: "Ok!",
+            });
+          setFormvalue({...formvalue,name:"",email:"",message:""})
+          
+          
       }
-    });
-    }
+      else
+      {
+        swal({
+          title: "error",
+          text: "Not done",
+          icon: "error",
+          button: "Ok!",
+        });
+        setFormvalue({...formvalue,name:"",email:"",message:""})
+      }
+  }
   return (
     <div>
 {/* Contact Section Begin */}
@@ -71,7 +83,7 @@ function Contact() {
                 <textarea placeholder="Message" defaultValue={""} name="message" value={formvalue.message} onChange={changehandel} >
                   {formvalue.message}
                 </textarea>
-                <button type="submit" className="site-btn" onClick={submithandel}>Send Message</button>
+                <button type="submit" className="site-btn" onClick={submitHandel}>Send Message</button>
               </div>
             </div>
           </form>

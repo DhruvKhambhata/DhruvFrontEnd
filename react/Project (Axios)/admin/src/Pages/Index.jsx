@@ -1,8 +1,7 @@
 import React,{useState,useContext,useEffect} from 'react'
 import {useNavigate , Link} from 'react-router-dom'
-
-
 import swal from 'sweetalert';
+
 function Index() {
   const navigate=useNavigate();
 

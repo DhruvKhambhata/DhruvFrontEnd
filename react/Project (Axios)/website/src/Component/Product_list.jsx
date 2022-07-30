@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import { useNavigate , useParams } from 'react-router-dom'
-
+import axios from 'axios'
 
 function Product_list() {
     const [allProduct,SetallProduct]=useState([]);
@@ -11,11 +11,14 @@ function Product_list() {
       
     },[]);
   
-    function viewProducts()
+    async function viewProducts()
     {
-      fetch(`https://websiteecom-355b6-default-rtdb.firebaseio.com/products.json`)
-      .then((resp)=>resp.json())
-      .then((data)=>SetallProduct(data));
+      const res = await axios.get(`https://websiteecom-355b6-default-rtdb.firebaseio.com/products.json`);
+      if (res.data) {
+        SetallProduct(res.data);
+        viewProducts()
+      }
+      
     }
     
     const navigate=useNavigate()
@@ -23,7 +26,7 @@ function Product_list() {
             <>
             {
                 Object.keys(allProduct).map((item)=>{
-                const {title,file,main_price,disc_price,size,category,stock,desc}=allProduct[item]; 
+                const {title,file,main_price}=allProduct[item]; 
                  return(
                     
                     <div className="col-lg-4 col-md-6 col-sm-6">
