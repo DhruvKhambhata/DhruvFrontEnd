@@ -55,7 +55,7 @@ return (
                       <th>Title</th>
                       <th>Description</th>
                       <th>Main Price</th>
-                      <th></th>
+                      <th>Size</th>
                       <th>Dis Price</th>
                       <th>Category</th>
                       <th>Stock</th>

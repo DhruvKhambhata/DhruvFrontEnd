@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from 'react'
-import { useNavigate , useParams } from 'react-router-dom'
-import axios from 'axios'
+import { useNavigate} from 'react-router-dom'
+
 
 function Product_list() {
     const [allProduct,SetallProduct]=useState([]);
-    const[EditID,setEditId]=useState([]);
+  
 
     useEffect(()=>{
       viewProducts()
@@ -30,7 +30,7 @@ function Product_list() {
                     
                     <div className="col-lg-4 col-md-6 col-sm-6">
                       <div className="product__item">
-                        <div className="product__item__pic set-bg">
+                        <div className="product__item__pic set-bg img-thumbnail">
                           <img src={file} height="100%" width="100%"/>
                           <ul className="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
