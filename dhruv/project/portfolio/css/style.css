@@ -702,7 +702,46 @@ footer span a:hover {
 }
 
 
+/*second page css*/
+.PNF-center{
+    margin: 10% auto;
+    
+    text-align: center;
+}
+
+.PNF-text{
+    margin: 0% auto;
+}
+
+.PNF-text h6{
+    color:rgb(120, 120, 120);
+    
+}
+
+.PNF-btn a{
+    text-align: center;
+    border:2px solid crimson;
+    text-decoration: none;
+    color: black;
+    padding:10px 10px;
+    border-radius: 10px;
+    
+}
+
+.PNF-btn a:hover{
+    background-color:crimson ;
+    color: white;
+    text-decoration: none;
+    transition:0.5s linear;
+}
+
+
+.PNF-btn a i{
    
+    margin-right: 10px;
+    
+}
+
 
 
 /* responsive media query start */

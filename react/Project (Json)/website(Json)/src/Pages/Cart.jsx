@@ -3,13 +3,7 @@ import {Link} from 'react-router-dom'
 import Manage_cart from '../Component/Manage_cart';
 
 function Cart() {
-  
-  
-  
      return(
-
-          
-            
 <div>
 {/* Shopping Cart Section Begin */}
 <section className="shopping-cart spad">
