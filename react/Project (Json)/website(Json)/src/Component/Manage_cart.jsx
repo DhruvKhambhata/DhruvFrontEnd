@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {Link , useParams , useNavigate} from 'react-router-dom'
 import swal from 'sweetalert';
+
 function Manage_cart() {
 
     const [allProduct,SetallProduct]=useState([]);
@@ -16,7 +17,6 @@ function Manage_cart() {
         .then((response) => response.json())
         .then((data) => 
         SetallProduct(data),
-        
         );  
        
     }
@@ -63,7 +63,7 @@ function Manage_cart() {
       <p id='null'></p>
     {
              Object.keys(allProduct).map((item,index)=>{
-              const {title,file,main_price,disc_price,size,category,stock,desc}=allProduct[item];  
+              const {title,file,main_price}=allProduct[item];  
               return(
     
       
@@ -95,10 +95,12 @@ function Manage_cart() {
       
              )})}
     </tbody>
-       
+    
     </>
           
   </table>
+
+  
   )
 }
 

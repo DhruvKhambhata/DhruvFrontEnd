@@ -15,6 +15,7 @@ import PNF from './pages/PNF'
 import Edit_contact from './pages/Edit_contact'
 import Edit_Product from './pages/Edit_Product'
 import Edit_users from './pages/Edit_users'
+import Add_admin from './pages/Add_admin'
 
 function Main() {
   return (
@@ -31,6 +32,7 @@ function Main() {
             <Route path='/View_users' element={<Private_Route> <Header/><View_users/></Private_Route>}/>
             <Route path='/pnf' element={<><Header/><PNF/></>}/>
             <Route path='/view_contact/:id' element={<Private_Route> <Header/><Edit_contact/></Private_Route>}/>
+            <Route path='/add_admin' element={<Add_admin/>} />
             <Route path='/view_product/:id' element={<Edit_Product/>}/>
             <Route path='/View_users/:id' element={<Edit_users/>}/>
         </Routes>

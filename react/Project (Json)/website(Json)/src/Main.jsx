@@ -38,7 +38,7 @@ function Main() {
                   <Route path='/login' element={<><Banner2 title={"Login"}/><Login/></>}/>
                   <Route path='/checkout' element={<><Banner2 title={"checkout"}/><Checkout/></>}/>
                   <Route path='/shop-details/:id' element={<><Banner2 title={"Product_Details"}/><Product_Details/></>}/>
-                  <Route path='/shopping-cart/:id' element={<><Banner2 title={"shopping-cart"}/><Cart/></>}/>
+                  <Route path='/shopping-cart/:id' element={<><Banner2 title={"shopping-cart"}/><Cart /></>}/>
                   <Route path='*' element={<><Header/><PNF/></>}/>
                   
               </Routes>

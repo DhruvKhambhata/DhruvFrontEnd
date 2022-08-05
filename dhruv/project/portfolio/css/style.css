@@ -840,6 +840,17 @@ footer span a:hover {
     .services .serv-content .card {
         width: 100%;
     }
+    .PNF-img{
+       
+        margin-top: 150px;
+        height: 100px;
+        width:200px;
+        
+    }
+    .PNF-img img{
+       
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 500px) {
