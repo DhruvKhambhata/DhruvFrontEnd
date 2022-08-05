@@ -701,6 +701,19 @@ footer span a:hover {
     text-decoration: underline;
 }
 
+.icons-font{
+    color: #ffffff;
+    cursor: pointer;
+    font-size:30px ;
+    text-decoration: none;
+}
+
+.icons-font :hover{
+    color: crimson;
+    transition-duration:1s;
+    text-decoration: none;
+}
+
 
 /*second page css*/
 .PNF-center{
