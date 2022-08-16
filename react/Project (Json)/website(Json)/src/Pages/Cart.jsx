@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import Manage_cart from '../Component/Manage_cart';
 
 function Cart() {
+
+
      return(
 <div>
 {/* Shopping Cart Section Begin */}
@@ -11,7 +13,7 @@ function Cart() {
     <div className="row">
       <div className="col-lg-8">
         <div className="shopping__cart__table">
-          <Manage_cart/>
+        <Manage_cart/>
         </div>
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-6">
@@ -40,7 +42,7 @@ function Cart() {
             <li>Subtotal <span></span></li>
             <li>Total <span>$ 169.50</span></li>
           </ul>
-          <a href="#" className="primary-btn">Proceed to checkout</a>
+          <Link to="/checkout" className="primary-btn">Proceed to checkout</Link>
         </div>
       </div>
     </div>

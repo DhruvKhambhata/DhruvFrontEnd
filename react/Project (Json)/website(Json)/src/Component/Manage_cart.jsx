@@ -48,6 +48,7 @@ function Manage_cart() {
       }
   
   return (
+   
     <table>
     <thead>
       <tr>
@@ -70,7 +71,7 @@ function Manage_cart() {
       <tr>
         <td className="product__cart__item">
           <div className="product__cart__item__pic">
-            <img src={file} alt />
+            <img src={file} alt="prod_img" />
           </div>
           <div className="product__cart__item__text">
             <h6>{title}</h6>
@@ -92,14 +93,16 @@ function Manage_cart() {
           </button>
           </td>
       </tr>
-      
+   
              )})}
     </tbody>
     
+    
     </>
+    
           
   </table>
-
+  
   
   )
 }

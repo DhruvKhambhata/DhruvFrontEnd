@@ -38,10 +38,10 @@ const submitHandel = async (e) => {
   const res=await axios.post(`https://websiteecom-355b6-default-rtdb.firebaseio.com/Cart.json`,formvalue);
   if(res.data)
   {
-      //alert(res.data.msg);
+      
       swal({
           title: "Success",
-          text: "done",
+          text: "res.data.msg",
           icon: "success",
           button: "Ok!",
         }); 
