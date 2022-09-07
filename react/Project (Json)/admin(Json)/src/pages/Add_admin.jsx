@@ -5,11 +5,8 @@ import {useNavigate} from 'react-router-dom'
 function Add_admin() {
 
   const [formvalue,setFormvalue] = useState({
-    
     "email":"",
     "password":""
-    
-    
   })
     
     function changehandel(e){
