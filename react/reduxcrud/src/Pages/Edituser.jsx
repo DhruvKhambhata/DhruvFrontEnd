@@ -1,68 +1,86 @@
-import React,{useEffect, useState} from 'react'
+import React,{useState,useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate,useParams} from 'react-router-dom';
+import { addUser, getSingleUser, updateUser } from '../Redux/actions';
 
-import {useNavigate, useParams} from 'react-router-dom'
-import {useSelector,useDispatch} from 'react-redux'
-import { edituser } from '../Redux/actions'
 function Edituser() {
-    const {user}= useSelector((state)=>state.usersR)
-    
-    const {id}=useParams();
-    
-    let dispatch = useDispatch();
-    
-    const [error,setError]=useState("");
 
-  const [formvalue,setFormvalue]=useState({
+    let dispatch= useDispatch();
+    const navigate = useNavigate();
+
+
+const [formvalue, setformvalue] = useState({
     name:"",
     username:"",
     email:"",
     phone:"",
-    website:""
-    })
+    website:""  
+})
+    
+const [error, seterror] = useState("") 
+let {id}= useParams();
+const {user} = useSelector(state=>state.data);
 
-    useEffect(()=>{
-       console.log(user)
-       
-    })
+ function changehandle(e){
+    setformvalue({...formvalue,[e.target.name]:e.target.value});
+    console.log(formvalue);
+ }  
 
-function submithandel(){}
-function changehandel(){}
+ function submithandle(e){
+    e.preventDefault();
+    if(!formvalue.name || !formvalue.username || !formvalue.email || !formvalue.phone || !formvalue.website ){
+        seterror("Please Input All The Data")
+    }else{
+        dispatch(updateUser(formvalue, id));
+        navigate("/");
+        seterror("");
+    }
+ }
 
+ useEffect(() => {
+   dispatch(getSingleUser(id));
+ }, []);
+
+ useEffect(() => {
+   if(user){
+    setformvalue({...user});
+   }
+ }, [user])
+ 
+ 
   return (
-    <div>
-              <div className="container mt-3">
-          <h2>Edit user form</h2>
-          <form action="">
-          
-          {
-            error && <h3 align="center">{error}</h3>
-          }  
+      <div className="container mt-5">
+          <h2>Edit user form <Link to="/" className='btn btn-primary float-end'>Go Back</Link></h2>
             
+          <form action="post" onSubmit={submithandle}>
+          {
+            error && <h5 align="center" className='text-danger'>{error}</h5>
+          }  
           <div className="mb-3 mt-3">
-                  <label htmlFor="name">name:</label>
-                  <input type="text" onChange={changehandel} value={formvalue.name} className="form-control" id="name" placeholder="Enter name" name="name" />
+                  <label htmlFor="name">Name:</label>
+                  <input type="text"className="form-control" value={formvalue.name || ""} onChange={changehandle} id="name" placeholder="Enter name" name="name" />
               </div>
               <div className="mb-3 mt-3">
-                  <label htmlFor="email">username:</label>
-                  <input type="text" onChange={changehandel} value={formvalue.username} className="form-control" id="username" placeholder="Enter username" name="username" />
+                  <label htmlFor="email">Username:</label>
+                  <input type="text"  className="form-control" value={formvalue.username || ""} onChange={changehandle} id="username" placeholder="Enter username" name="username" />
               </div>
               <div className="mb-3 mt-3">
-                  <label htmlFor="email">email:</label>
-                  <input type="email" onChange={changehandel} value={formvalue.email} className="form-control" id="email" placeholder="Enter email" name="email" />
+                  <label htmlFor="email">Email:</label>
+                  <input type="email" className="form-control" value={formvalue.email || "" } onChange={changehandle} id="email" placeholder="Enter email" name="email" />
               </div>
            
               <div className="mb-3">
-                  <label htmlFor="pwd">phone:</label>
-                  <input type="number" onChange={changehandel} value={formvalue.phone} className="form-control" id="phone" placeholder="Enter phone" name="phone" />
+                  <label htmlFor="pwd">Phone:</label>
+                  <input type="number"  className="form-control" value={formvalue.phone || ""} onChange={changehandle} id="phone" placeholder="Enter phone" name="phone" />
               </div>
               <div className="mb-3">
-                  <label htmlFor="pwd">website:</label>
-                  <input type="text" onChange={changehandel} value={formvalue.website} className="form-control" id="website" placeholder="Enter website" name="website" />
+                  <label htmlFor="pwd">Website:</label>
+                  <input type="text"  className="form-control" value={formvalue.website || ""} onChange={changehandle} id="website" placeholder="Enter website" name="website" />
               </div>
-              <button type="submit" onClick={submithandel} className="btn btn-primary">Submit</button>
+              <button type="submit" onClick={submithandle} className="btn btn-primary">Update</button>
           </form>
       </div>
-    </div>
+
   )
 }
 

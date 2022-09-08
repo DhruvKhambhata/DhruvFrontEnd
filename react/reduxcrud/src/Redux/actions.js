@@ -1,85 +1,81 @@
-import * as types from './actionType'
+import * as types from './actionType';
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
 
+const getUsers = (users)=>({
+    type: types.GET_USER,
+    payload: users,
+});
 
+const userDeleted = ()=>({
+  type: types.DELETE_USER,
+})
 
-export const view=(data)=>{
-    return{
-        type:types.GET_USER, 
-        payload:data
-    }
+const userAdded = ()=>({
+  type: types.ADD_USER,
+})
+
+const userUpdated = ()=>({
+  type: types.UPDATE_USER,
+})
+
+const getUser = (user)=>({
+  type: types.GET_SINGLE_USER,
+  payload:user,
+})
+
+export const  loadUsers = ()=>{
+  return function(dispatch){
+    axios.get(`${process.env.REACT_APP_API}`).then((resp)=>{
+        console.log("resp", resp)
+        dispatch(getUsers(resp.data));
+    })
+    .catch((error)=> console.log(error));
+  }
 }
 
-export const getUser=()=>{
-    return function(dispatch){
-        axios.get(`http://localhost:3000/users`)
-        .then((resp)=>{
-            dispatch(view(resp.data));
-        })
-        .catch(error=>console.log(error))
-    }
+export const deleteUser = (id)=>{
+  return function(dispatch){
+    axios.delete(`${process.env.REACT_APP_API}/${id}`)
+    .then((resp)=>{
+        console.log("resp", resp)
+        dispatch(userDeleted(id));
+        dispatch(loadUsers());
+    })
+    .catch((error)=> console.log(error));
+  }
 }
 
-
-export const destroy=(id)=>{
-    return{
-        type:types.DELETE_USER,
-        payload:id
-    }
+export const addUser = (user)=>{
+  return function(dispatch){
+    axios.post(`${process.env.REACT_APP_API}`,user)
+    .then((resp)=>{
+        console.log("resp", resp)
+        dispatch(userAdded());
+        dispatch(loadUsers());
+    })
+    .catch((error)=> console.log(error));
+  }
 }
 
-export const deleteUser=(id)=>{
-    return function(dispatch){
-        axios.delete(`http://localhost:3000/user/${id}`)
-        .then((resp)=>{
-            dispatch(destroy());
-            dispatch(getUser());
-        })
-        .catch(error=>console.log(error))
-    }
+export const getSingleUser = (id)=>{
+  return function(dispatch){
+    axios.get(`${process.env.REACT_APP_API}/${id}`)
+    .then((resp)=>{
+        console.log("resp", resp)
+        dispatch(getUser(resp.data));
+    })
+    .catch((error)=> console.log(error));
+  }
 }
 
-export const store=()=>{
-    return{
-        type:types.ADD_USER,
-    }
-}
-
-export const addUser=(data)=>{
-    return function(dispatch){
-        axios.post(`http://localhost:3000/users`,data)
-        .then((resp)=>{
-            dispatch(store());
-        })
-        .catch(error=>console.log(error))
-    }
-}
-
-
-
-export const edituser=(id)=>{
-    return{
-        type:'EDIT_USER',
-        payload:id
-    }
-}
-
-export const editUser = (id) => {
-    
-    return function(dispatch){
-        axios.get(`http://localhost:3000/users/${id}`)
-        .then((resp)=>{
-            dispatch(edituser());
-            console.log(editUser)
-        })
-        .catch(error=>console.log(error))
-    }
-}
-
-export const updateuser=(data)=>{
-    return{
-        type:'UPDATE_USER',
-        payload:data
-    }
+export const updateUser = (user,id)=>{
+  return function(dispatch){
+    axios.put(`${process.env.REACT_APP_API}/${id}`,user)
+    .then((resp)=>{
+        console.log("resp", resp)
+        dispatch(userUpdated());
+        dispatch(loadUsers());
+    })
+    .catch((error)=> console.log(error));
+  }
 }
