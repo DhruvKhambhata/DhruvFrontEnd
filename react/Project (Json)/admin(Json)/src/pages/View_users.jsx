@@ -113,7 +113,6 @@ function View_users() {
                           <td className="center"><button onClick={()=>handelstatus(item)} className="btn btn-primary">{status}</button></td>
                           <td className="center"><button onClick={()=>handelDelete(item)} className="btn btn-danger">Delete</button></td>
                           <td className="center"><button onClick={()=>navigate(`/View_users/${item}`)} className="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button></td>
-                         
                         </tr>
                       )
 

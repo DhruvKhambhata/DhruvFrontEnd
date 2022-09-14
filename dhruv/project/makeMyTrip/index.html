@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeMyTrip -#1 Travel website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+</head>
+<body>
+    <div class="wrapper container-fluid">
+        <div class="header-content">
+            <nav class="navbar navbar-expand-lg ">
+                <a class="navbar-brand" href="#"><img src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png" alt="logo " class="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"><i class="
+                    fa fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse navabr-text" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="Nav-item">
+                            <div class="boxOne">
+                                    <img src="assets/phone.jpg" alt="">
+                                    
+                                    <div class="inside-content">
+                                        <h3>Download the App</h3>
+                                        <h6>Get exciting welcome offer</h6>
+                                    </div>
+                            </div>
+                        </li>
+                        <li class="Nav-item">
+                            <div class="boxOne"> 
+                                    <i class="fa fa-briefcase" ></i>
+                                    <div class="inside-content">
+                                        <h3>Introducing myBiz</h3>
+                                        <h6>Business Travel Solution</h6>
+                                    </div>
+                            </div>
+                        </li>
+                        <li class="Nav-item">
+                            <div class="boxOne"> 
+                                    <i class="fa fa-plane" ></i>
+                                    <div class="inside-content">
+                                        <h3>My Trips</h3>
+                                        <h6>Manage your bookings</h6>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="loginbox">
+                                <span class="loginimg"><img src="assets/mylogo.PNG" alt=""></span>
+                                <span class="loginText">Login or create Account</span>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+               
+                
+              </nav>
+        </div>
+        <div class="trip-box container">
+            <div class="row">
+                <div class="icons-box">
+                    <ul>
+                        <li class="boxwrapper active">
+                            <i class="fa fa-plane" aria-hidden="true"></i>
+                            <p>Flights</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-building" aria-hidden="true"></i>
+                            <p>Hotels</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <p>HomeStays</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                            <p>Holidays</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-train" aria-hidden="true"></i>
+                            <p>Trains</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-bus" aria-hidden="true"></i>
+                            <p>Buses</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-cab" aria-hidden="true"></i>
+                            <p>Cabs</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-money" aria-hidden="true"></i>
+                            <p>Forex</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                            <p>charter Flights</p>
+                        </li>
+                        <li class="boxwrapper">
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                            <p>Activitys</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ticketsection col-md-12">
+                    <div class=" select-content activech col-md-2">
+                        <input type="radio" checked="checked">
+                        <p>ONEWAY</p>
+                    </div>
+                    <div class=" select-content1 col-md-2">
+                        <input type="radio">
+                        <p>Round-trip</p>
+                    </div>
+                    <div class=" select-content col-md-2">
+                        <input type="radio">
+                        <p>multicity</p>
+                    </div>
+                    <div class="text-info col-md-6">
+                        <p>Book International and Domestic Flights</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 place-box left">
+                    <span>From</span>
+                    <h1>Delhi</h1>
+                    <p>DEL,Delhi Airport india</p>
+                </div>
+                <div class="col-md-3 place-box">
+                    <span>TO</span>
+                    <h1>Bengluru</h1>
+                    <p>BLR,Bengaluru international Airport india</p>
+                </div>
+                <div class="col-md-3 main-box">
+                    <div class="row">
+                        <div class="col-md-6 date-box">
+                            <h6>Departure </h6>
+                            <h4><span class="date">14</span> Sep'22</h4>
+                            <p>Wednesday</p>
+                        </div>
+                        <div class="col-md-6 date-box">
+                            <h6>return </h6>
+                            <h4><span class="date">15</span> Sep'22</h4>
+                            <p>Thursday</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-3 count-box right">
+                    <span>traveller & class</span>
+                    <h4><span class="count">1</span>Traveller</h4>
+                    <p>Economy/Premium Economy</p>
+                    <span class="alert">Group Booking Now Available!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="fare-wrapper col-md-8">
+                    <div class="row">
+                    <div class="title-box ">
+                        <p>Select A Fare Type:</p>
+                    </div>
+                    <div class="content-box radiusleft">
+                        <input type="radio" >
+                        <p>Regular Fares</p>
+                    </div>
+                    <div class="content-box">
+                        <input type="radio" >
+                        <p>Armored Forces</p>
+                    </div>
+                    <div class="content-box ">
+                        <input type="radio" >
+                        <p>Student Fares</p>
+                    </div>
+                    <div class="content-box ">
+                        <input type="radio" >
+                        <p>Senior Citizen Fares</p>
+                    </div>
+                    <div class="content-box ">
+                        <input type="radio" >
+                        <p>Doctors & Nurses Fares</p>
+                    </div>
+                    <div class="content-box radiusright">
+                        <input type="radio" >
+                        <p>Double seat Fares</p>
+                    </div>
+                </div>
+                    
+                </div>
+            </div>
+            <div class="row ">
+                <div class="search-btn">
+                    <button>SEARCH</button>
+                </div>
+            </div>
+
+        </div>
+            <div class="row mx-auto">
+                <div class="exp">
+                    <i class="fa fa-caret-down" aria-hidden="true"></i><p>Explore More</p><i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="SixBox container">
+                    <div class="row">
+                        <div class="col-md-2 dataBox radiusleft">
+                            <i class="fa fa-globe" aria-hidden="true"></i>
+                            <p>Where2GO</p>
+                        </div>
+                        <div class="col-md-2 dataBox">
+                            <i class="fa fa-image" aria-hidden="true"></i>
+                            <p>TripMoney</p>
+                            <br>
+                            
+                        </div>
+                        <div class="col-md-4 dataBoxad">
+                            <i class="fa fa-plane" aria-hidden="true"></i>
+                            <p>Explore International Flights</p>
+                            
+                        </div>
+                        <div class="col-md-2 dataBox">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <p>Nearby Getaways</p>
+                        </div>
+                        <div class="col-md-2 dataBox radiusright">
+                            <i class="fa fa-gift" aria-hidden="true"></i>
+                            <p>Gift Cards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+
+    <script src="javascript/slider.js"></script>
+<div class="bg-change">
+    <div class="row mx-auto">
+        <div class="container">
+            <div class="download-box col-md-12">
+                <div class="row mx-auto">
+                    <h1>Download App Now !</h1>
+                    
+                    
+                </div>
+                <div class="row mx-auto">
+                    <h2>Get India's #1 travel super app, join 100 Million+ happy travellers!</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 info-box">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <i class="fa fa-mobile"></i>
+                            </div>
+                            <div class="col-md-10 second-info">
+                                <p>Use code WELCOMEMMT and get upto Rs 1200 off on your first domestic flight booking</p>
+                                <div class="input-group">
+                                    <input type="tel" class="form-control-sm" placeholder="Enter Mobile Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append link-app">
+                                      <span id="basic-addon2">Get App Link</span>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="col-md-4 code-box">
+                        <div class="row">
+                            <div class="explore">
+                                <p>MORE WAYS TO GET THE APP</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <img src="data:image/png;base64,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" alt="">
+                            </div>
+                            <div class="col-md-6 qr-code">
+                                <img src="https://promos.makemytrip.com/notification/xhdpi/QRCodeDT_QR-code.jpg" alt="">
+                                <p>Scan QR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container pink-box">
+            <div class="row">
+                <div class="col-md-6 trip__img">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="https://www.tripmoney.com/ext/static/TravelLoan/travelLoan.png" alt="">
+                        </div>
+                        <div class="col-md-10 trip-img">
+                            <img src="assets/tripmoney.PNG" alt="">
+                            
+                            <p><span class="dark">Forex </span>at best exchange rates delivered at your doorstep</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 order-butn">
+                    Order Now <i class="fa fa-order"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12 datacont">
+                <div class="title">
+                    PRODUCT OFFERING
+                </div>
+                <div class="data">
+                    <p>Flights, International Flights, Charter Flights, Hotels, International Hotels, Homestays and Villas, Activities, Holidays In India, International Holidays, Book Hotels From UAE, myBiz for Corporate Travel, Book Online Cabs, Book Bus Tickets, Book Train Tickets, Cheap Tickets to India, Book Flights From US, Book Flights From UAE, Trip Planner, Gift Cards, Trip Money, Trip Ideas, Travel Blog, PNR Status, MakeMyTrip Advertising Solutions, One Way Cab</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="title">
+                    MAKEMYTRIP
+                </div>
+                <div class="data">
+                    <p>About Us, Investor Relations, Careers, MMT Foundation, CSR Policy, myPartner - Travel Agent Portal, Foreign Exchange, List your hotel, Partners- Redbus, Partners- Goibibo, Advertise with Us</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="title">
+                    ABOUT THE SITE
+                </div>
+                <div class="data">
+                    <p>Customer Support, Payment Security, Privacy Policy, User Agreement, Terms of Service, More Offices, Make A Payment, Work From Home</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="title">
+                    QUICK LINKS
+                </div>
+                <div class="data">
+                    <p>Delhi Chennai Flights, Delhi Mumbai Flights, Delhi Goa Flights, Chennai Mumbai flights, Mumbai Hyderabad flights, Kolkata to Rupsi Flights, Rupsi to Guwahati Flights, Pasighat to Guwahati Flights, Delhi to Khajuraho Flights, Cochin to Agatti Island Flights, Hotels in Delhi, Hotels in Mumbai, Hotels In Goa, Hotels In Jaipur, Hotels In Ooty, Hotels In Udaipur, Hotels in Puri, Hotels In North Goa, Hotels In Rishikesh, Honeymoon Packages, Kerala Packages, Kashmir Packages, Ladakh Packages, Goa Packages, Thailand Packages, Sri Lanka Visa, Thailand Visa, Explore Goa, Explore Manali, Explore Shimla, Explore Jaipur, Explore Srinagar</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="title">
+                    IMPORTANT LINKS
+                </div>
+                <div class="data">
+                    <p>Cheap Flights, Flight Status, Kumbh Mela, Domestic Airlines, International Airlines, Indigo, Spicejet, GoAir, Air Asia, Air India, Indian Railways, Trip Ideas, Beaches, Honeymoon Destinations, Romantic Destinations, Popular Destinations, Resorts In Udaipur, Resorts In Munnar, Villas In Lonavala, Villas In Goa, Domestic Flight Offers, International Flight Offers, UAE Flight Offers, USA, UAE, Saudi Arabia, UK, Oman</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="title">
+                    CORPORATE TRAVEL
+                </div>
+                <div class="data">
+                    <p>Corporate Travel, Corporate Hotel Booking, Corporate Flight Booking, Business Travel for SME, GST Invoice for International flights, Business Travel Solutions, GST Invoice for Bus, Corporate Bus booking, myBiz - Best Business Travel Platform, GST Invoice for Flights, GST Invoice for Corporate Travel, GST Invoice for Hotels, myBiz for Small Business, Free cancellation on International Flights</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="gray">
+        <div class="container ">
+            <div class="col-md-4 data-box">
+                <div class="title-card">
+                    Why MakeMyTrip?
+                </div>
+                <div class="content-card">
+                    <p>Established in 2000, MakeMyTrip has since positioned itself as one of the leading companies, providing great offers, competitive airfares, exclusive discounts, and a seamless online booking experience to many of its customers. The experience of booking your flight tickets, hotel stay, and holiday package through our desktop site or mobile app can be done with complete ease and no hassles at all. We also deliver amazing offers, such as Instant Discounts, Fare Calendar, MyRewardsProgram, MyWallet, and many more while updating them from time to time to better suit our customers’ evolving needs and demands.</p>
+                </div>
+            </div>
+            <div class="col-md-4 data-box">
+                <div class="title-card">
+                    Booking Flights with MakeMyTrip
+                </div>
+                <div class="content-card">
+                    <p>At MakeMyTrip, you can find the best of deals and cheap air tickets to any place you want by booking your tickets on our website or app. Being India’s leading website for hotel, flight, and holiday bookings, MakeMyTrip helps you book flight tickets that are affordable and customized to your convenience. With customer satisfaction being our ultimate goal, we also have a 24/7 dedicated helpline to cater to our customer’s queries and concerns. Serving over 5 million happy customers, we at MakeMyTrip are glad to fulfill the dreams of folks who need a quick and easy means to find air tickets. You can get a hold of the cheapest flight of your choice today while also enjoying the other available options for your travel needs with us.</p>
+                </div>
+            </div>
+            <div class="col-md-4 data-box">
+                <div class="title-card">
+                    Domestic Flights with MakeMyTrip
+                </div>
+                <div class="content-card">
+                    <p>MakeMyTrip is India's leading player for flight bookings. With the cheapest fare guarantee, experience great value at the lowest price. Instant notifications ensure current flight status, instant fare drops, amazing discounts, instant refunds and rebook options, price comparisons and many more interesting features.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="row">
+            <div class="container-fluid ">
+                <div class="row footer-sec">
+                    <div class="icons cold-md-6">
+                        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </div>   
+                    <div class="data-footer col-md-6">
+                        @2022 MAKEMYTRIP PVT.LTD.
+                        <p>Country India USA UAE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+</body>
+</html>

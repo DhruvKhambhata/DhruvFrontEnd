@@ -26,8 +26,8 @@ const getUser = (user)=>({
 export const  loadUsers = ()=>{
   return function(dispatch){
     axios.get(`${process.env.REACT_APP_API}`).then((resp)=>{
-        console.log("resp", resp)
-        dispatch(getUsers(resp.data));
+        console.log(resp.status)
+        dispatch(getUsers(resp.obj.data));
     })
     .catch((error)=> console.log(error));
   }
@@ -44,7 +44,7 @@ export const deleteUser = (id)=>{
     .catch((error)=> console.log(error));
   }
 }
-
+  
 export const addUser = (user)=>{
   return function(dispatch){
     axios.post(`${process.env.REACT_APP_API}`,user)
