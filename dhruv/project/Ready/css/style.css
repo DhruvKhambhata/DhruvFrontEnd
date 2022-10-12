@@ -268,12 +268,18 @@ span.hbttn:hover{
     padding: 12px 24px;
 }
 
-.img-cont img{
-    position: relative;
+.img-cont{
+    padding: 0;
+    
+}
+
+
+.img-cont-main img{
+    position: absolute;
     height: 383px;
     width: 407px;
-    top:-280px;
-    left: 200px;
+    top:530%;
+    left: 330px;
 }
 
 .img-cont-shoe img
@@ -281,14 +287,14 @@ span.hbttn:hover{
     width: 74px;
     height: 88px;
     position: relative;
-    top:-600px;
-    left: 500px;
+    top:-430px;
+    left: -200px;
 }
 
 .img-cont-pencile img{
     position: relative;
-    top:-920px;
-    left: 0px;
+    top:-480px;
+    left: -300px;
     width: 74px;
     height: 53px;
 }
@@ -296,23 +302,21 @@ span.hbttn:hover{
     width: 66px;
     height: 49px;
     position: relative;
-    top:-950px;
-    left: 0px;
+    top:-480px;
+    left: -380px;
 }
 
 .img-cont-round img{
     width: 99px;
     height: 99px;
     position: relative;
-    top:-950px;
-    left: 0px;
+    top:-400px;
+    left: -480px;
 }
-.img-wrap{
-    position: relative;
-    height: fit-content;
-}
+
 .footer-area{
-    padding-top: 50px;
+    padding-top: 0px;
+    
 }
 
 .foot-box h3{
@@ -353,7 +357,7 @@ span.hbttn:hover{
         position: relative;
         right: 5%;
     }
-    .first-img , .img-cont-box , .img-cont img, .img-cont-shoe img , .img-cont-pencile img , .img-cont-rubbur img , .img-cont-round img{
+    .first-img , .img-cont-box ,.img-wrapp {
         display: none;
     }
 
@@ -378,6 +382,7 @@ span.hbttn:hover{
     
     .content-box{
         text-align: center;
+        
     }
 .contect-box input , .contect-box button{
    
@@ -394,6 +399,10 @@ span.hbttn:hover{
     .padding{
         padding-top: 0;
         
+    }
+
+    .footer-area{
+        margin-top: 50px;
     }
 
 
@@ -460,3 +469,17 @@ span.hbttn:hover{
     }
 }
 
+
+.flying{
+    animation: fly 5s infinite;
+}
+
+
+@keyframes fly {
+    0%,100%{
+        transform: translate(0px, -10px) rotate(-15deg);
+    }
+    50% {
+        transform: translate(0px, 5px) rotate(-10deg);
+    }
+}
