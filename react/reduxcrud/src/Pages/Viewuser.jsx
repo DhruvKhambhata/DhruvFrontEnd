@@ -37,6 +37,10 @@ const Viewuser = () => {
               </thead>
               <tbody>
                 {
+                  users ? 
+                  <tr>
+                    <td colSpan={8} className="text-center h4 text-info"> data not addad</td>
+                  </tr> :
                    users && users.map((item,index)=>(
                     <tr key={item.id}>
                       <th>{index+1}</th>
@@ -50,7 +54,10 @@ const Viewuser = () => {
                         <button className='btn btn-primary m-1' onClick={()=>navigate(`/edit_user/${item.id}`)}>Edit</button>
                       </th>
                   </tr>
+                  
                     ))
+                    
+                  
                 }
               </tbody>
           </table>

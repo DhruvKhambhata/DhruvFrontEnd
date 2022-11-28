@@ -670,7 +670,7 @@ section .title::after {
     font-size: 18px;
     font-weight: 500;
     border-radius: 6px;
-    cursor: pointer;
+    cursor: grab;
     flex-wrap: nowrap;
     background: crimson;
     border: 2px solid crimson;
